@@ -9,6 +9,7 @@ public class Product {
 	int sid;
 	double price;
 	String prodName;
+	
 	public int getPid() {
 		return pid;
 	}

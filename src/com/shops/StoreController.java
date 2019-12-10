@@ -14,12 +14,12 @@ import com.mysql.jdbc.CommunicationsException;
 
 @ManagedBean
 @SessionScoped
-public class ProductController {
+public class StoreController {
 	
 	DAO dao;
-	ArrayList<Product> products;
+	ArrayList<Store> stores;
 	
-	public ProductController() {
+	public StoreController() {
 		super();
 		try {
 			dao = new DAO();
@@ -29,20 +29,20 @@ public class ProductController {
 		}
 	}
 
-	public void loadProducts() {
-		System.out.println("In loadproducts()");
+	public void loadStores() {
+		System.out.println("In loadstores()");
 		try {
-			products = dao.loadProducts();
+			stores = dao.loadStores();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
-	public String addProduct(Product p) {
-		System.out.println(p.getPid() + " " + p.getSid());
+	public String addStore(Store s) {
+		System.out.println(s.getId() + " " + s.getName());
 		try {
-			dao.addProduct(p);
+			dao.addStore(s);
 			return "index";
 		} catch (SQLIntegrityConstraintViolationException e) {
 			FacesMessage message = 
@@ -62,9 +62,9 @@ public class ProductController {
 		return null;
 	}
 
-	public void deleteProduct(int p) {
+	public void deleteStore(int s) {
 		try {
-			dao.deleteProduct(p);	
+			dao.deleteStore(s);	
 		}
 		catch(SQLException e) {
 			e.printStackTrace();
@@ -72,8 +72,7 @@ public class ProductController {
 		return;
 	}
 	
-	public ArrayList<Product> getProducts() {
-		return products;
+	public ArrayList<Store> getStores() {
+		return stores;
 	}
-	
 }
