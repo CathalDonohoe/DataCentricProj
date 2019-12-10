@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:h="http://xmlns.jcp.org/jsf/html"
-  xmlns:f="http://xmlns.jcp.org/jsf/core">
-  
-  <h:head>
-    <title>Add Store</title>
-  </h:head>
-  
-  <h:body>
-  <h1>Add Store</h1>
-  </h:body>
- </html>
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Add Store</title>
+</h:head>
+
+<h:body>
+	<h1>Add Store</h1>
+
+	<h:messages globalOnly="true" />
+	<h:form>
+  		Store Name: <h:inputText value="#{store.name}"></h:inputText>
+  		Store Founded: <h:inputText value="#{store.founded}"></h:inputText>
+		<h:commandButton value="Add" action="#{storeController.addStore(store)}"></h:commandButton>
+
+		<h:commandLink value="Store Page" action="list_stores"></h:commandLink>
+
+	</h:form>
+</h:body>
+</html>
