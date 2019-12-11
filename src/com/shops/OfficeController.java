@@ -62,4 +62,10 @@ public class OfficeController {
 		}
 		return null;
 	}
+
+
+	public ArrayList<Offices> getOffices() {
+		return offices;
+	}
+
 }
