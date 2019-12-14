@@ -5,13 +5,16 @@ import javax.faces.bean.ManagedBean;
 @ManagedBean
 public class Store {
 
-	
+	//variables from database
 	int id;
 	String name;
 	String Founded;
+
+	//getters and setters
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}

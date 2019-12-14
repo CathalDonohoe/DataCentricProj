@@ -18,9 +18,7 @@ public class MongoDAO {
 	MongoCollection<Document> collection;
 	
 	
-	/* ======================================================================================================
-	 * Constructor
-	 * ====================================================================================================== */
+	//Constructor
 	public MongoDAO() throws Exception {
 		mongoClient = new MongoClient();
 		database = mongoClient.getDatabase(mongoDB);
@@ -29,7 +27,6 @@ public class MongoDAO {
 	
 	
 	//load Offices
-	
 	public ArrayList<Offices> loadOffices() throws Exception {
 		ArrayList<Offices> offices = new ArrayList<Offices>();
 		FindIterable<Document> docOffice = collection.find();
@@ -48,6 +45,8 @@ public class MongoDAO {
 	}
 	
 	//add store method
+	//Never got this working, for head office
+	//Meant to be done last, had problems with mongo and decided to drop it instead of breaking code
 	public void addOffice(Offices office) throws Exception {
 		
 		FindIterable<Document> docOffice = collection.find();

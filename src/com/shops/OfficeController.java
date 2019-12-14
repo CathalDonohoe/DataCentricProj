@@ -40,6 +40,7 @@ public class OfficeController {
 		}
 	}
 	
+	//add Office
 	public String addOffice(Offices o) {
 		System.out.println("In addOffices!");
 		try {
@@ -51,7 +52,7 @@ public class OfficeController {
 					FacesContext.getCurrentInstance().addMessage(null, message);
 		} catch (CommunicationsException e) {
 			FacesMessage message = 
-					new FacesMessage("Error: Can't communicate with DB");
+					new FacesMessage("Error: Can't communicate with MongoDB");
 					FacesContext.getCurrentInstance().addMessage(null, message);
 		}catch (Exception e) {
 			FacesMessage message = 

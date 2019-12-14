@@ -5,11 +5,13 @@ import javax.faces.bean.ManagedBean;
 @ManagedBean
 public class Product {
 	
+	//variables from database
 	int pid;
 	int sid;
 	double price;
 	String prodName;
 	
+	//getters and setters
 	public int getPid() {
 		return pid;
 	}

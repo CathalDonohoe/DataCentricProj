@@ -15,12 +15,7 @@ public class DAO {
 
 	private DataSource mysqlDS;
 
-	/*
-	 * =============================================================================
-	 * ========================= Constructor
-	 * =============================================================================
-	 * =========================
-	 */
+	//constructor
 	public DAO() throws Exception {
 		Context context = new InitialContext();
 		String jndiName = "java:comp/env/shops";
@@ -28,7 +23,6 @@ public class DAO {
 	}
 
 	//loads products
-	//
 	public ArrayList<Product> loadProducts() throws Exception {
 
 		Connection myConn = null;
@@ -58,7 +52,6 @@ public class DAO {
 	}
 
 	//loads stores
-	//
 	public ArrayList<Store> loadStores() throws Exception {
 
 		Connection myConn = null;
@@ -95,6 +88,7 @@ public class DAO {
 
 		myConn = mysqlDS.getConnection();
 
+		//sql Query
 		String sql = "select p.pid, p.prodName, p.price, s.name, s.founded, s.id from product p inner join store s on p.sid = s.id where p.sid like "+spId;
 		
 
@@ -137,7 +131,6 @@ public class DAO {
 	}
 
 	//add store
-	//add product
 		public void addStore(Store store) throws Exception {
 			Connection myConn = null;
 			PreparedStatement myStmt = null;

@@ -5,6 +5,7 @@ import javax.faces.bean.ManagedBean;
 @ManagedBean
 public class StoreProduct {
 
+	//variables from database
 	int id;
 	String name;
 	String founded;
@@ -12,7 +13,7 @@ public class StoreProduct {
 	String prodName;
 	double price;
 	
-	
+	//getters and setters
 	public int getId() {
 		return id;
 	}

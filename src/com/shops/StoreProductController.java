@@ -30,6 +30,7 @@ public class StoreProductController {
 	
 	}
 	
+	//load stores and products method
 	public String loadStoreProducts(int spId) {
 		System.out.println("In loadStoreProducts()");
 		try {

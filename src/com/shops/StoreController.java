@@ -29,6 +29,7 @@ public class StoreController {
 		}
 	}
 
+	//load stores method
 	public void loadStores() {
 		System.out.println("In loadstores()");
 		try {
@@ -39,6 +40,7 @@ public class StoreController {
 		}
 	}
 	
+	//method to add store
 	public String addStore(Store s) {
 		System.out.println(s.getId() + " " + s.getName());
 		try {
@@ -46,11 +48,11 @@ public class StoreController {
 			return "index";
 		} catch (SQLIntegrityConstraintViolationException e) {
 			FacesMessage message = 
-					new FacesMessage("Error: Product ID already exists");
+					new FacesMessage("Error: "+s.getName()+" already exists");
 					FacesContext.getCurrentInstance().addMessage(null, message);
 		} catch (CommunicationsException e) {
 			FacesMessage message = 
-					new FacesMessage("Error: Can't communicate with DB");
+					new FacesMessage("Error: Can't communicate with SQL");
 					FacesContext.getCurrentInstance().addMessage(null, message);
 		}catch (Exception e) {
 			FacesMessage message = 
@@ -62,6 +64,7 @@ public class StoreController {
 		return null;
 	}
 
+	//method to delete store
 	public void deleteStore(int s) {
 		try {
 			dao.deleteStore(s);	
